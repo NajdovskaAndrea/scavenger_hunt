@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #response {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Петто прашање</h1>
+        <p id="riddle"> Колку континенти има? <br> Напиши со број</p>
+        <input type="text" id="answer" placeholder="Внеси одговор">
+        <button onclick="checkAnswer()">Одговори</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("answer").value.trim();
+            var response = document.getElementById("response");
+
+            if (answer === "7") {
+                response.textContent = "Браво! Одиме на следно прашање";
+                setTimeout(function() {
+                    window.location.href = "sixth.html";
+                }, 2000);
+            } else {
+                response.textContent = "Погрешен одговор! Пробај повторно.";
+                response.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
